@@ -1,5 +1,19 @@
-#!/bin/zsh
-echo "Installing..."
+#!/bin/bash
+echo "Installing develop enviroment..."
+
+usage() {
+    echo "usage: ./install_dev.sh [--acces_token token]"
+}
+
+case $1 in
+  --acces_token)
+    echo $2
+    exit 1
+    ;;
+  *)
+    usage
+    exit 1
+esac
 
 
 docker-machine ssh develop rm /root/nginx.conf
