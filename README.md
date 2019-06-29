@@ -46,14 +46,14 @@ Con el objetivo de entender las tecnologias y procesos que aqui se describen, es
   | node              | v12.4.0       |
   | docker            | 18.09.6       |
   | docker-machine    | 0.16.0        |
-  - #### Instalacion del ambiente
+
+  - #### Instalacion por cada ambiente
 
   Para realizar el proceso de instalacion es necesario unicamente ejecutar el script correspondiente al ambiente que desea montar, agregando el acces_token como parametro.
 
   Ejemplo:
   ```bash
-  access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d &&
-  ./bin/install_dev --acces_token $access_token
+  ./bin/install_dev --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
   ```
   Esto creara la instancia de la maquina remota de ser encesario, copiara algunos archivos del proyecto y ejecutara en ella los scripts necesarios para proveer una infraestructura basica por cada ambiente.
 
@@ -61,26 +61,23 @@ Con el objetivo de entender las tecnologias y procesos que aqui se describen, es
 
 Para instalar el ambiente de desarrollo es necesario unicamente ejecutar el siguiente comando:
 ```bash
-access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d &&
-./bin/install_dev --acces_token $access_token
+./bin/install_dev.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
 ```
 
 > nota: recuerde reemplazar el valor del atributo `acces_token` con el valor correspondiente
 
-## Ambiente de 'Pruebas' o 'Produccion'
+## Ambiente de 'Pruebas' y 'Produccion'
 
 De igual forma para instalar los ambientes de pruebas o produccion es necesario ejecutar el script correnpondiente de la siguiente forma para el ambiente de pruebas:
 
 ```bash
-access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d &&
-./bin/install_qa --acces_token $access_token
+./bin/install_qa.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
 ```
 
 O para instalar el ambiente productivo:
 
 ```bash
-access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d &&
-./bin/install_prod --acces_token $access_token
+./bin/install_prod.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
 ```
 
 ## Ejecucion en ambiente local
@@ -94,21 +91,11 @@ access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d &&
 
 ## Autores
 
+// TODO
+
 ## Licencia
 
-
-
- To run:
-
- docker-machine ssh develop rm /root/nginx.conf &&
- docker-machine ssh develop rm -rf /root/html &&
- docker-machine ssh develop docker rm -f webserver &&
- docker-machine scp nginx.conf develop:/root/nginx.conf &&   
- docker-machine scp -r ./html develop:/root/html &&
- docker-machine ssh develop docker run --name webserver -v /root/nginx.conf:/etc/nginx/nginx.conf:ro \
-  -v /root/html:/usr/share/nginx/html:ro -d -p 80:80 nginx
-
-
+// TODO
 
 ---
  # HTML5 CSS3 JS6 [English version]
