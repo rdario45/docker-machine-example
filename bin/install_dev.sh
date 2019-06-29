@@ -29,14 +29,13 @@ copy() {
 }
 
 remote(){
-    echo -e "4. Execute remote script."
-    docker-machine ssh $DROPLET_NAME sh install.sh
+  echo -e "4. Ejecutando el script de instalacion remoto."
+  docker-machine ssh $DROPLET_NAME sh install.sh
 }
 
-resumen() {
-  echo -e "5. Ambiente de desarrollo creado."
-  docker-machine ip $DROPLET_NAME
-}
+#domain() {
+#  echo -e "5. Creando el Domain Record para $DROPLET_NAME."
+#}
 
 main() {
   echo -e "\n Instalando ambiente de desarrollo... \n"
@@ -44,12 +43,13 @@ main() {
   create
   copy
   remote
-  resumen
+  #domain
+  echo -e "\n Ambiente de desarrollo instalado! \n"
+
 }
 
 case $1 in
     (--acces_token)
-      echo $2
       main
       exit 1
     ;;
