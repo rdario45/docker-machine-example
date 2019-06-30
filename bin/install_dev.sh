@@ -5,7 +5,7 @@ DROPLET_NAME=desarrollo
 USER=root
 
 usage() {
-  echo -e "\n usage: ./install_dev [--acces_token token] \n"
+  echo -e "\n usage: ./install_dev [--create|--update] [--acces_token token] \n"
 }
 
 remove() {
@@ -21,11 +21,11 @@ create() {
 copy() {
   echo -e "3. Copiando archivos del proyecto a $DROPLET_NAME."
   # pos install script
-  docker-machine scp ./bin/remote/install.sh $DROPLET_NAME:/$USER/install.sh
+  docker-machine scp -d ./bin/remote/install.sh $DROPLET_NAME:/$USER/install.sh
   # nginx config
-  docker-machine scp ./nginx/nginx.conf $DROPLET_NAME:/$USER/nginx.conf
+  docker-machine scp -d ./nginx/nginx.conf $DROPLET_NAME:/$USER/nginx.conf
   # src folder
-  docker-machine scp -r ./src $DROPLET_NAME:/$USER/html
+  docker-machine scp -r -d ./src $DROPLET_NAME:/$USER/html
 }
 
 remote(){
