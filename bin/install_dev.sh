@@ -21,11 +21,11 @@ create() {
 copy() {
   echo -e "3. Copiando archivos del proyecto a $DROPLET_NAME."
   # pos install script
-  docker-machine scp -d ./bin/remote/install.sh $DROPLET_NAME:/$USER/install.sh
+  docker-machine scp -d ./bin/remote/install.sh $DROPLET_NAME:/$USER/website/install.sh
   # nginx config
-  docker-machine scp -d ./nginx/nginx.conf $DROPLET_NAME:/$USER/nginx.conf
+  docker-machine scp -d ./nginx/nginx.conf $DROPLET_NAME:/$USER/website/nginx.conf
   # src folder
-  docker-machine scp -r -d ./src $DROPLET_NAME:/$USER/html
+  docker-machine scp -r -d ./src $DROPLET_NAME:/$USER/website/src
 }
 
 remote(){
