@@ -20,17 +20,19 @@ create() {
 
 copy() {
   echo -e "3. Copiando archivos del proyecto a $DROPLET_NAME."
+  # Crea el directorio remoto
+  docker-machine ssh $DROPLET_NAME mkdir -p /$USER/website
   # pos install script
-  docker-machine scp -d ./bin/remote/install.sh $DROPLET_NAME:/$USER/website/install.sh
+  docker-machine scp -r -d ./bin/remote/install.sh $DROPLET_NAME:/$USER/website/install.sh
   # nginx config
-  docker-machine scp -d ./nginx/nginx.conf $DROPLET_NAME:/$USER/website/nginx.conf
+  docker-machine scp -r -d ./nginx/nginx.conf $DROPLET_NAME:/$USER/website/nginx.conf
   # src folder
-  docker-machine scp -r -d ./src $DROPLET_NAME:/$USER/website/src
+  docker-machine scp -r -d ./src $DROPLET_NAME:/$USER/website
 }
 
 remote(){
   echo -e "4. Ejecutando el script de instalacion remoto."
-  docker-machine ssh $DROPLET_NAME sh install.sh
+  docker-machine ssh $DROPLET_NAME sh ./website/install.sh
 }
 
 #domain() {
