@@ -1,4 +1,4 @@
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
   background-color: #34DBE1;
@@ -22,4 +22,11 @@ html, body {
   background-color: #FEFEFE;
   width: 500px;
   height: 500px;
+} */
+
+body {
+    background-color: blueviolet;
+    }
+h1,h2,h3,h4,h5,h6 {
+    color: white;
 }
