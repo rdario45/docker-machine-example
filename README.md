@@ -24,7 +24,7 @@ Con el objetivo de entender las tecnologias y procesos que aqui se describen, es
 
   Para proveer la infraestructura necesaria en la plataforma de DigitalOcean es necesario generar un token personal de acceso (personal access token) en tu cuenta de DigitalOcean como lo indica el siguiente  [tutorial](https://www.digitalocean.com/docs/api/create-personal-access-token/).
 
-  Suponiendo que `access_token=91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d` se procedera a usar en los scrips de instalacion como se detalla mas adelante.
+  Suponiendo que `access_token=xxx` se procedera a usar en los scrips de instalacion como se detalla mas adelante.
 
 
   - #### Instlacion de utilidades
@@ -53,7 +53,7 @@ Con el objetivo de entender las tecnologias y procesos que aqui se describen, es
 
   Ejemplo:
   ```bash
-  ./bin/install_dev --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
+  ./bin/install_dev --acces_token xxx
   ```
   Esto creara la instancia de la maquina remota de ser encesario, copiara algunos archivos del proyecto y ejecutara en ella los scripts necesarios para proveer una infraestructura basica por cada ambiente.
 
@@ -61,7 +61,7 @@ Con el objetivo de entender las tecnologias y procesos que aqui se describen, es
 
 Para instalar el ambiente de desarrollo es necesario unicamente ejecutar el siguiente comando:
 ```bash
-./bin/install_dev.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
+./bin/install_dev.sh --acces_token xxx
 ```
 
 > nota: recuerde reemplazar el valor del atributo `acces_token` con el valor correspondiente
@@ -71,13 +71,13 @@ Para instalar el ambiente de desarrollo es necesario unicamente ejecutar el sigu
 De igual forma para instalar los ambientes de pruebas o produccion es necesario ejecutar el script correnpondiente de la siguiente forma para el ambiente de pruebas:
 
 ```bash
-./bin/install_qa.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
+./bin/install_qa.sh --acces_token xxx
 ```
 
 O para instalar el ambiente productivo:
 
 ```bash
-./bin/install_prod.sh --acces_token 91b21f4cdaa0643a6b4f998896830e200d4fd0bc4d12a2a792be3b2e5b10564d
+./bin/install_prod.sh --acces_token xx
 ```
 
 ## Ejecucion en ambiente local
